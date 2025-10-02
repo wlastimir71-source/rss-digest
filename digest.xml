@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Дайджест новостей: Россия–Украина</title>
+  <link>https://example.com/digest</link>
+  <description>Ежедневная подборка новостей и анализа по конфликту Россия–Украина</description>
+  <language>ru</language>
+  <lastBuildDate>Thu, 02 Oct 2025 09:00:00 GMT</lastBuildDate>
+
+  <item>
+    <title>Удары по НПЗ России</title>
+    <link>https://example.com/digest/npz-2025-10-02</link>
+    <description>ВСУ нанесли удары по нескольким НПЗ в центральной и южной части России. Зафиксированы перебои в работе мощностей, часть заводов остановлена.</description>
+    <pubDate>Thu, 02 Oct 2025 09:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Цены на бензин АИ-92</title>
+    <link>https://example.com/digest/fuel-2025-10-02</link>
+    <description>Прогноз: рост цен на бензин в ближайшие 30 дней составит от 68 до 78 руб/л в зависимости от сценария развития ситуации.</description>
+    <pubDate>Thu, 02 Oct 2025 09:05:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Дипломатическая активность</title>
+    <link>https://example.com/digest/diplomacy-2025-10-02</link>
+    <description>США и ЕС обсуждают новый пакет санкций против России. Украина ведет переговоры о дополнительных поставках вооружений.</description>
+    <pubDate>Thu, 02 Oct 2025 09:10:00 GMT</pubDate>
+  </item>
+
+</channel>
+</rss>
