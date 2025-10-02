@@ -1,0 +1,37 @@
+name: Update RSS
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # запуск каждый день в 9:00 UTC
+  workflow_dispatch:     # возможность запустить вручную
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update digest.xml
+        run: |
+          echo "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" > digest.xml
+          echo "<rss version=\"2.0\"><channel>" >> digest.xml
+          echo "<title>Дайджест новостей: Россия–Украина</title>" >> digest.xml
+          echo "<link>https://example.com/digest</link>" >> digest.xml
+          echo "<description>Автоматически обновляемая лента новостей</description>" >> digest.xml
+          echo "<language>ru</language>" >> digest.xml
+          echo "<lastBuildDate>$(date -R)</lastBuildDate>" >> digest.xml
+          
+          # Пример автоматического добавления новости
+          echo "<item><title>Авто-дайджест</title><link>https://example.com/digest/$(date +%Y-%m-%d)</link><description>Новости за $(date +%d.%m.%Y)</description><pubDate>$(date -R)</pubDate></item>" >> digest.xml
+          
+          echo "</channel></rss>" >> digest.xml
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digest.xml
+          git commit -m "Автоматическое обновление RSS"
+          git push
+
